@@ -580,7 +580,7 @@ footer {
 /* ===========================
    HAMBURGER MENU STYLING
    =========================== */
-.menu-toggle {
+.hamburger {
   display: none;
   font-size: 28px;
   cursor: pointer;
@@ -589,7 +589,7 @@ footer {
 
 /* Hide menu on small screens */
 @media (max-width: 768px) {
-  .menu-toggle {
+  .hamburger {
     display: block;
   }
 
@@ -597,11 +597,14 @@ footer {
     display: none;
     flex-direction: column;
     width: 100%;
+    top: 60px;
+    left: 0;
     background-color: #0F172A;
     text-align: center;
+    padding: 10px 0;
   }
 
-  .nav-links.show {
+  .nav-links.active {
     display: flex;
   }
 
@@ -655,4 +658,5 @@ footer {
     display: flex;
   }
 }
+
 
