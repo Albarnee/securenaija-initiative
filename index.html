@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SecureNaija Initiative | Home</title>
+  <link rel="stylesheet" href="style.css">
+</head> 
+<body>
+  <!-- ===== Navigation Bar ===== -->
+  <header>
+    <nav class="navbar">
+    <div class="logo">SecureNaija</div>
+   <!-- Hamburger icon -->
+<div class="menu-toggle" id="menu-toggle">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
+
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== Hero Section ===== -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Protecting Nigerians in the Digital Age</h1>
+      <p>Empowering students, youths, and businesses to stay safe online.</p>
+      <a href="https://forms.gle/VuV1P3vofruhMm8R9" class="btn">Join the Movement</a>
+    </div>
+  </section>
+
+  <!-- ===== About Section ===== -->
+  <section class="about">
+    <h2>About SecureNaija Initiative</h2>
+    <p>SecureNaija is a nonprofit project focused on cybersecurity awareness and capacity building across Nigeria. Our mission is to make the internet a safer place for everyone — through education, outreach, and training programs.</p>
+  </section>
+
+  <!-- ===== Programs Section ===== -->
+  <section class="programs">
+    <h2>Our Programs</h2>
+    <div class="program-cards">
+      <div class="card">
+        <h3>Cyber Awareness</h3>
+        <p>We host campaigns that teach Nigerians how to identify scams and stay safe online.</p>
+      </div>
+      <div class="card">
+        <h3>Youth Training</h3>
+        <p>Hands-on training sessions for students to build careers in cybersecurity and tech.</p>
+      </div>
+      <div class="card">
+        <h3>Safe Business Online</h3>
+        <p>Helping small businesses secure their websites and digital transactions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>© 2025 SecureNaija Initiative | All Rights Reserved</p>
+  </footer>
+  <script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+    menuToggle.classList.toggle('active');
+  });
+</script>
+
+
+</body>
+</html>
