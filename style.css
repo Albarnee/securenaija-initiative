@@ -607,7 +607,7 @@ footer {
   width: 36px;
   height: 28px;
   padding: 0;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
 }
 
@@ -672,5 +672,6 @@ footer {
     transform: translateY(-7px) rotate(-45deg);
   }
 }
+
 
 
