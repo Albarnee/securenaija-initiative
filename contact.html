@@ -9,17 +9,23 @@
 
 <body>
   <!-- Navbar -->
-<header>
+ <header>
   <nav class="navbar">
     <div class="logo">SecureNaija</div>
-    <div class="hamburger" id="hamburger">
-      &#9776;
-    </div>
+
+    <!-- Hamburger icon -->
+    <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- Nav links (note id and class) -->
     <ul class="nav-links" id="nav-links">
       <li><a href="index.html">Home</a></li>
-     <li><a href="about.html">About</a></li>
+      <li><a href="about.html">About</a></li>
       <li><a href="programs.html">Programs</a></li>
-       <li><a href="blog.html">Blog</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
       <li><a href="contact.html" class="active">Contact</a></li>
     </ul>
   </nav>
@@ -62,6 +68,32 @@
   <footer>
     <p>© 2025 SecureNaija Initiative | All Rights Reserved.</p>
   </footer>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    if (!menuToggle || !navLinks) return; // safety
+
+    menuToggle.addEventListener('click', function () {
+      const isOpen = navLinks.classList.toggle('show');
+      menuToggle.classList.toggle('active');
+      // update ARIA for accessibility
+      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    // Optional: close menu when a link is clicked (mobile)
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (navLinks.classList.contains('show')) {
+          navLinks.classList.remove('show');
+          menuToggle.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
-
