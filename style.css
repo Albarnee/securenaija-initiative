@@ -558,104 +558,118 @@ footer {
   }
 }
 
-/* ===== Very Small Devices (Screen width 480px and below) ===== */
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 22px;
-  }
-
-  .nav-links a {
-    font-size: 14px;
-  }
-
-  .btn {
-    font-size: 14px;
-    padding: 8px 14px;
-  }
-
-  .blog-card img {
-    height: 180px;
-  }
+/* ---------- NAVBAR (desktop) ---------- */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* logo left, menu right */
+  align-items: center;
+  padding: 14px 28px;
+  background-color: #0F172A; /* adjust to your theme */
+  position: relative; /* for absolute mobile menu */
+  z-index: 100;
 }
-/* ===========================
-   HAMBURGER MENU STYLING
-   =========================== */
-.hamburger {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
+
+/* Logo */
+.navbar .logo {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.35rem;
+}
+
+/* Desktop nav links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-links a {
   color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 8px;
 }
 
-/* Hide menu on small screens */
+/* Hover */
+.nav-links a:hover {
+  color: #0EA5E9;
+}
+
+/* ---------- HAMBURGER (base) ---------- */
+.menu-toggle {
+  display: none;              /* hidden on desktop */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 36px;
+  height: 28px;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+/* the three lines */
+.menu-toggle .bar {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+  margin: 4px 0;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* ---------- MOBILE STYLES ---------- */
 @media (max-width: 768px) {
-  .hamburger {
-    display: block;
+
+  /* show hamburger */
+  .menu-toggle {
+    display: flex;
   }
 
+  /* hide desktop links by default */
   .nav-links {
     display: none;
     flex-direction: column;
-    width: 100%;
-    top: 60px;
+    position: absolute;
+    top: 60px;      /* adjust to navbar height */
     left: 0;
+    width: 100%;
     background-color: #0F172A;
-    text-align: center;
-    padding: 10px 0;
-  }
-
-  .nav-links.active {
-    display: flex;
+    padding: 12px 0 18px;
+    gap: 0;
   }
 
   .nav-links li {
-    padding: 15px 0;
-    border-bottom: 1px solid #1E293B;
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    border-top: 1px solid rgba(255,255,255,0.03);
   }
 
   .nav-links a {
-    color: white;
+    display: block;
+    width: 100%;
     font-size: 18px;
   }
-}
-/* ===========================
-   ANIMATED HAMBURGER MENU
-   =========================== */
-.menu-toggle {
-  display: none;
-  cursor: pointer;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 22px;
-  z-index: 1000;
-}
 
-.bar {
-  height: 3px;
-  width: 100%;
-  background-color: white;
-  border-radius: 3px;
-  transition: all 0.3s ease;
-}
-
-/* Active state when clicked */
-.menu-toggle.active .bar:nth-child(1) {
-  transform: rotate(45deg) translateY(8px);
-}
-
-.menu-toggle.active .bar:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-toggle.active .bar:nth-child(3) {
-  transform: rotate(-45deg) translateY(-8px);
-}
-
-/* Responsive visibility */
-@media (max-width: 768px) {
-  .menu-toggle {
+  /* when the menu is active (open) */
+  .nav-links.show {
     display: flex;
+  }
+
+  /* animated X when active */
+  .menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
   }
 }
 
