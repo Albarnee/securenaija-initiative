@@ -511,7 +511,7 @@ footer {
   /* Navbar collapses neatly */
   .navbar {
     flex-direction: column;
-    align-items: end;
+    align-items: center;
     padding: 15px;
   }
 
@@ -609,11 +609,11 @@ footer {
   padding: 0;
   justify-content: center;
   align-items: center;
-}
-.menu-toggle {
+}.menu-toggle {
   /* existing styles... */
   margin-left: auto; /* this pushes it to the right side */
 }
+
 
 
 /* the three lines */
@@ -677,8 +677,5 @@ footer {
     transform: translateY(-7px) rotate(-45deg);
   }
 }
-
-
-
 
 
