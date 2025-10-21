@@ -8,12 +8,18 @@
 </head> 
 <body>
   <!-- ===== Navigation Bar ===== -->
-<header>
+  <header>
   <nav class="navbar">
     <div class="logo">SecureNaija</div>
-    <div class="hamburger" id="hamburger">
-      &#9776;
-    </div>
+
+    <!-- Hamburger icon -->
+    <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- Nav links (note id and class) -->
     <ul class="nav-links" id="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
@@ -23,8 +29,6 @@
     </ul>
   </nav>
 </header>
-
-
   <!-- ===== Hero Section ===== -->
   <section class="hero">
     <div class="hero-text">
@@ -63,12 +67,30 @@
   <footer>
     <p>© 2025 SecureNaija Initiative | All Rights Reserved</p>
   </footer>
- <script>
-  const hamburger = document.getElementById("hamburger");
-  const navLinks = document.getElementById("nav-links");
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
 
-  hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
+    if (!menuToggle || !navLinks) return; // safety
+
+    menuToggle.addEventListener('click', function () {
+      const isOpen = navLinks.classList.toggle('show');
+      menuToggle.classList.toggle('active');
+      // update ARIA for accessibility
+      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    // Optional: close menu when a link is clicked (mobile)
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (navLinks.classList.contains('show')) {
+          navLinks.classList.remove('show');
+          menuToggle.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
   });
 </script>
 
@@ -76,4 +98,3 @@
 
 </body>
 </html>
-
