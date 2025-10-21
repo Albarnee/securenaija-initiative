@@ -511,7 +511,7 @@ footer {
   /* Navbar collapses neatly */
   .navbar {
     flex-direction: column;
-    align-items: center;
+    align-items: end;
     padding: 15px;
   }
 
@@ -608,7 +608,7 @@ footer {
   height: 28px;
   padding: 0;
   justify-content: end;
-  align-items: center;
+  align-items: end;
 }
 
 /* the three lines */
@@ -672,6 +672,7 @@ footer {
     transform: translateY(-7px) rotate(-45deg);
   }
 }
+
 
 
 
