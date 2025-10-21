@@ -607,9 +607,14 @@ footer {
   width: 36px;
   height: 28px;
   padding: 0;
-  justify-content: end;
-  align-items: end;
+  justify-content: center;
+  align-items: center;
 }
+.menu-toggle {
+  /* existing styles... */
+  margin-left: auto; /* this pushes it to the right side */
+}
+
 
 /* the three lines */
 .menu-toggle .bar {
@@ -672,6 +677,7 @@ footer {
     transform: translateY(-7px) rotate(-45deg);
   }
 }
+
 
 
 
