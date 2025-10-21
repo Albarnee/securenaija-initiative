@@ -609,7 +609,8 @@ footer {
   padding: 0;
   justify-content: center;
   align-items: center;
-}.menu-toggle {
+}
+.menu-toggle {
   /* existing styles... */
   margin-left: auto; /* this pushes it to the right side */
 }
@@ -677,5 +678,6 @@ footer {
     transform: translateY(-7px) rotate(-45deg);
   }
 }
+
 
 
