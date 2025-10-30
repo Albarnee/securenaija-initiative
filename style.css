@@ -326,6 +326,16 @@ footer {
   display: flex;
   flex-direction: column;
 }
+.social-links button {
+  background-color: #0EA5E9;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
 
 .contact-form button {
   background-color: #0EA5E9;
@@ -678,6 +688,7 @@ footer {
     transform: translateY(-7px) rotate(-45deg);
   }
 }
+
 
 
 
